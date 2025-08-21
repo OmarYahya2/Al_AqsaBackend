@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)zff25@-fnl(8*k2d&=4%xemu6!uexm_9_%9r&h1_qq@(n6fud
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "al-aqsa-medical-lab.vercel.app",  
+    "al-aqsabackend-uokt.onrender.com",  
     "localhost",  
     "127.0.0.1"   
 ]
@@ -127,5 +127,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
