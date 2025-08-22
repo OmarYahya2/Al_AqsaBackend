@@ -10,6 +10,14 @@
 - حساب GitHub مع repository للمشروع
 - Python 3.11+
 - Django 5.2+
+- WhiteNoise 6.9+ (لخدمة الملفات الثابتة)
+
+## 🆕 المميزات الجديدة
+
+- ✅ **WhiteNoise**: خدمة الملفات الثابتة بدون خادم منفصل
+- ✅ **CSS محسن**: تصميم Django admin مع دعم اللغة العربية  
+- ✅ **إعدادات الإنتاج**: متغيرات البيئة للأمان
+- ✅ **Auto Admin**: إنشاء مستخدم admin تلقائياً
 
 ## 📁 هيكل المشروع
 
@@ -84,8 +92,10 @@ git push origin main
 **إعدادات الخدمة:**
 - **Name**: `al-aqsa-backend` (أو أي اسم تختاره)
 - **Runtime**: `Python 3`
-- **Build Command**: `pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate`
-- **Start Command**: `gunicorn Backend.wsgi:application`
+- **Build Command**: `pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python create_superuser.py`
+- **Start Command**: `gunicorn Backend.wsgi:application --bind 0.0.0.0:$PORT`
+
+**⚠️ مهم:** تأكد من أن Build Command يتضمن `python create_superuser.py` لإنشاء مستخدم admin تلقائياً.
 
 ### الخطوة 3: إضافة متغيرات البيئة
 
