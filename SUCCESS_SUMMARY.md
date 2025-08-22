@@ -33,8 +33,17 @@ https://al-aqsa-medical-lab.vercel.app
 
 ```bash
 git add .
-git commit -m "Add home page redirect - no more 404!"
+git commit -m "Fix Gunicorn command and add home page redirect"
 git push origin main
+```
+
+### 🔧 **إصلاح مشكلة Render:**
+
+**المشكلة:** `AttributeError: module 'Backend' has no attribute 'application'`
+
+**الحل:** ✅ تم تحديث أمر Gunicorn إلى:
+```bash
+gunicorn Backend.wsgi:application
 ```
 
 ---
