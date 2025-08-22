@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: al-aqsa-backend
+    name: al-aqsa-backend-new
     runtime: python3
+    rootDir: Al-AqsaBackend
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python create_superuser.py"
-    startCommand: "gunicorn wsgi:application"
+    startCommand: "gunicorn Backend.wsgi:application"
     plan: free
     branch: main
     healthCheckPath: /api/contact/
@@ -13,7 +14,7 @@ services:
       - key: DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: "al-aqsabackend-uokt.onrender.com,localhost,127.0.0.1"
+        value: "localhost,127.0.0.1"
       - key: PYTHONUNBUFFERED
         value: "1"
       - key: WEB_CONCURRENCY
