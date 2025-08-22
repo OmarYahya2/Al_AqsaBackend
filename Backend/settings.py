@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-)zff25@-fnl(8*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'al-aqsabackend-uokt.onrender.com,localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'al-aqsabackend-1-pv0k.onrender.com,al-aqsabackend-uokt.onrender.com,localhost,127.0.0.1').split(',')
 
 # إضافة الدومين الذي تولده Render تلقائياً
 render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
@@ -164,7 +164,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = [
-    "https://al-aqsa-medical-lab.vercel.app",  # frontend vercel
+    "https://al-aqsamedical-lab.vercel.app",  # frontend vercel الجديد
+    "https://al-aqsa-medical-lab.vercel.app",  # frontend vercel القديم
     "http://localhost:3000",  # للتجربة من الجهاز المحلي
 ]
 
@@ -195,8 +196,10 @@ CORS_ALLOWED_METHODS = [
 
 # CSRF Settings for API
 CSRF_TRUSTED_ORIGINS = [
-    "https://al-aqsa-medical-lab.vercel.app",
-    "https://al-aqsabackend-uokt.onrender.com",
+    "https://al-aqsamedical-lab.vercel.app",  # frontend vercel الجديد
+    "https://al-aqsa-medical-lab.vercel.app",  # frontend vercel القديم
+    "https://al-aqsabackend-1-pv0k.onrender.com",  # backend الجديد
+    "https://al-aqsabackend-uokt.onrender.com",  # backend القديم
 ]
 
 # إضافة CSRF trusted origins للدومين الذي تولده Render
