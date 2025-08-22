@@ -3,6 +3,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
+from django.shortcuts import redirect
+from django.http import HttpResponse
+from django.views.generic import TemplateView
 from .serializers import ContactMessageSerializer
 import logging
 
@@ -65,3 +68,49 @@ class ContactMessageView(APIView):
             },
             status=status.HTTP_200_OK
         )
+
+
+def home_view(request):
+    """إعادة توجيه الصفحة الرئيسية إلى موقع Frontend"""
+    return redirect('https://al-aqsa-medical-lab.vercel.app')
+
+
+class APIInfoView(APIView):
+    """صفحة معلومات API للمطورين"""
+    permission_classes = [AllowAny]
+    
+    def get(self, request):
+        api_info = {
+            "project": "مختبر الأقصى الطبي - Backend API",
+            "version": "1.0.0",
+            "description": "واجهة برمجة التطبيقات لموقع مختبر الأقصى الطبي",
+            "frontend_url": "https://al-aqsa-medical-lab.vercel.app",
+            "admin_panel": "/admin/",
+            "endpoints": {
+                "contact": {
+                    "url": "/api/contact/",
+                    "methods": ["GET", "POST"],
+                    "description": "إرسال رسائل الاتصال"
+                },
+                "admin": {
+                    "url": "/admin/",
+                    "description": "لوحة التحكم الإدارية"
+                }
+            },
+            "documentation": {
+                "contact_form_example": {
+                    "first_name": "أحمد",
+                    "last_name": "محمد",
+                    "email": "ahmed@example.com",
+                    "phone": "+970123456789",
+                    "subject": "استفسار عن الخدمات",
+                    "message": "مرحبا، أريد الاستفسار عن خدماتكم"
+                }
+            },
+            "support": {
+                "email": "info@alaqsamedical.com",
+                "phone": "+970 123 456 789"
+            }
+        }
+        
+        return Response(api_info, status=status.HTTP_200_OK)

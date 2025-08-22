@@ -1,18 +1,33 @@
 /* تحسين مظهر Django Admin */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     direction: rtl;
     text-align: right;
+    margin: 0;
+    padding: 0;
 }
 
 /* تحسين الهيدر */
 #header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     text-align: center;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border-bottom: 3px solid #3498db;
+}
+
+/* إصلاح المحتوى الرئيسي */
+#content, #content-main {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #header h1 {
@@ -28,39 +43,63 @@ body {
 
 /* تحسين البطاقات */
 .module {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 15px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border: none;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    transition: all 0.3s ease;
+}
+
+.module:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    border-color: #3498db;
+}
+
+/* إصلاح الخلفية البيضاء المزعجة */
+.dashboard .module table,
+.results table,
+.change-list .results table {
+    background: transparent !important;
 }
 
 /* تحسين الجداول */
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 th {
-    background: #3498db;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
-    padding: 12px;
+    padding: 15px;
     text-align: center;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 td {
-    padding: 12px;
-    border-bottom: 1px solid #ecf0f1;
+    padding: 15px;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.1);
     text-align: center;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 tr:hover {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%) !important;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+tr:hover td {
+    background: transparent !important;
 }
 
 /* تحسين الأزرار */
@@ -103,11 +142,13 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, te
 
 /* تحسين التنقل */
 .breadcrumbs {
-    background: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 /* تحسين الرسائل */
@@ -154,10 +195,45 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, te
 
 /* تحسين sidebar */
 #content-related {
-    background: white;
-    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin: 20px;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* إصلاح شامل للخلفيات البيضاء المزعجة */
+.dashboard #content-main,
+.change-list #content-main,
+.change-form #content-main,
+.add-form #content-main {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* إصلاح خلفية الصفحة الرئيسية */
+.dashboard .module h2,
+.dashboard .module h3 {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: white !important;
+    padding: 12px 20px !important;
+    margin: -25px -25px 20px -25px !important;
+    border-radius: 15px 15px 0 0 !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* إصلاح خلفية النماذج */
+.form-row {
+    background: rgba(255, 255, 255, 0.8);
     padding: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 /* تحسين أيقونات النجاح والخطأ */
@@ -187,4 +263,70 @@ a {
 a:hover {
     color: #2980b9;
     text-decoration: underline;
+}
+
+/* إزالة الخلفيات البيضاء الإضافية */
+.change-list .results,
+.filtered .results,
+.paginator {
+    background: transparent !important;
+}
+
+.change-list .actions {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%) !important;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+/* تحسين قائمة التنقل العلوية */
+#user-tools {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+
+#user-tools a {
+    color: white !important;
+    font-weight: 500;
+}
+
+/* تحسين الفيلترز */
+#changelist-filter {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%) !important;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+#changelist-filter h2,
+#changelist-filter h3 {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    margin: -20px -20px 15px -20px !important;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+/* إصلاح خلفية الـ fieldsets */
+.fieldset {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.fieldset h2 {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    margin: -20px -20px 15px -20px !important;
+    border-radius: 10px 10px 0 0 !important;
 }
