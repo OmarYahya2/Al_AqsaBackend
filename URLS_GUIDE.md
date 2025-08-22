@@ -8,9 +8,9 @@
 ```
 GET /
 ```
-- **الوظيفة:** إعادة توجيه تلقائي إلى موقع Frontend
-- **الهدف:** `https://al-aqsa-medical-lab.vercel.app`
-- **النتيجة:** لن تظهر 404 بعد الآن ✅
+- **الوظيفة:** إعادة توجيه تلقائي إلى Django Admin
+- **الهدف:** `/admin/`
+- **النتيجة:** فتح لوحة التحكم مباشرة ✅
 
 #### **لوحة التحكم:**
 ```
@@ -54,7 +54,7 @@ GET /api/info/
 **عند زيارة البكند مباشرة:**
 
 1. **`https://al-aqsabackend-uokt.onrender.com/`**
-   → **يعيد التوجيه إلى** `https://al-aqsa-medical-lab.vercel.app`
+   → **يعيد التوجيه إلى** `https://al-aqsabackend-uokt.onrender.com/admin/`
 
 2. **`https://al-aqsabackend-uokt.onrender.com/admin/`**
    → **يعرض لوحة التحكم**
@@ -69,7 +69,7 @@ GET /api/info/
 
 | الرابط | الوظيفة | النتيجة |
 |--------|---------|----------|
-| `/` | الصفحة الرئيسية | ↩️ إعادة توجيه للـ Frontend |
+| `/` | الصفحة الرئيسية | ↩️ إعادة توجيه لـ Django Admin |
 | `/admin/` | لوحة التحكم | 🏛️ Django Admin |
 | `/api/contact/` | API الاتصال | 📬 استقبال/إرسال رسائل |
 | `/api/info/` | معلومات API | ℹ️ تفاصيل وتوثيق |
@@ -79,7 +79,7 @@ GET /api/info/
 ```bash
 # 1. اختبار الصفحة الرئيسية (redirect)
 curl -I https://al-aqsabackend-uokt.onrender.com/
-# Expected: 302 Found, Location: https://al-aqsa-medical-lab.vercel.app
+# Expected: 302 Found, Location: /admin/
 
 # 2. اختبار معلومات API
 curl https://al-aqsabackend-uokt.onrender.com/api/info/

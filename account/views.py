@@ -71,8 +71,8 @@ class ContactMessageView(APIView):
 
 
 def home_view(request):
-    """إعادة توجيه الصفحة الرئيسية إلى موقع Frontend"""
-    return redirect('https://al-aqsa-medical-lab.vercel.app')
+    """إعادة توجيه الصفحة الرئيسية إلى Django Admin"""
+    return redirect('/admin/')
 
 
 class APIInfoView(APIView):
