@@ -1,0 +1,190 @@
+/* تحسين مظهر Django Admin */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    direction: rtl;
+    text-align: right;
+}
+
+/* تحسين الهيدر */
+#header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+/* تحسين البطاقات */
+.module {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+}
+
+/* تحسين الجداول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #3498db;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ecf0f1;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* تحسين الأزرار */
+.button, input[type="submit"], button {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.button:hover, input[type="submit"]:hover, button:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* تحسين النماذج */
+.form-row {
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* تحسين التنقل */
+.breadcrumbs {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* تحسين الرسائل */
+.messagelist {
+    margin: 0;
+    padding: 0;
+}
+
+.messagelist li {
+    background: #2ecc71;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.messagelist li.warning {
+    background: #f39c12;
+}
+
+.messagelist li.error {
+    background: #e74c3c;
+}
+
+/* تحسين للشاشات الصغيرة */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    #header h1 {
+        font-size: 1.5rem;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* تحسين sidebar */
+#content-related {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* تحسين أيقونات النجاح والخطأ */
+.icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* تحسين الـ dashboard */
+.dashboard .module table {
+    margin: 0;
+}
+
+.dashboard .module {
+    margin: 10px;
+}
+
+/* إضافة تأثيرات hover للروابط */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
