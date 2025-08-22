@@ -495,3 +495,304 @@ table tr:nth-child(even) td {
 table tr:hover td {
     background: rgba(52, 152, 219, 0.2) !important;
 }
+
+/* إصلاح صفحة رسائل الاتصال - Contact Messages */
+.change-list #content-main,
+.changelist #content-main,
+.app-account .change-list #content-main {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    margin: 20px !important;
+    padding: 30px !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+}
+
+/* إصلاح النصوص في صفحة رسائل الاتصال */
+.change-list h1,
+.changelist h1,
+.change-list .results h2,
+.change-list p,
+.changelist p,
+.change-list .actions label,
+.changelist .actions label,
+.change-list .paginator,
+.changelist .paginator {
+    color: white !important;
+    background: transparent !important;
+}
+
+/* إصلاح جدول رسائل الاتصال */
+.change-list .results table,
+.changelist .results table {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.change-list .results table th,
+.changelist .results table th {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px !important;
+    text-align: center !important;
+}
+
+.change-list .results table td,
+.changelist .results table td {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 12px !important;
+    text-align: center !important;
+}
+
+.change-list .results table tr:nth-child(even) td,
+.changelist .results table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.change-list .results table tr:hover td,
+.changelist .results table tr:hover td {
+    background: rgba(52, 152, 219, 0.3) !important;
+    color: white !important;
+}
+
+/* إصلاح الروابط في جدول رسائل الاتصال */
+.change-list .results table td a,
+.changelist .results table td a {
+    color: #3498db !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.change-list .results table td a:hover,
+.changelist .results table td a:hover {
+    color: #5dade2 !important;
+    text-decoration: underline !important;
+}
+
+/* إصلاح الأيقونات والعمليات */
+.change-list .object-tools,
+.changelist .object-tools {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    margin: 15px 0 !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.change-list .object-tools a,
+.changelist .object-tools a {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+.change-list .object-tools a:hover,
+.changelist .object-tools a:hover {
+    background: linear-gradient(135deg, #2ecc71 0%, #58d68d 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4) !important;
+}
+
+/* إصلاح الفلاتر */
+.change-list #changelist-filter,
+.changelist #changelist-filter {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+.change-list #changelist-filter h2,
+.changelist #changelist-filter h2,
+.change-list #changelist-filter h3,
+.changelist #changelist-filter h3 {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    margin: -20px -20px 15px -20px !important;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.change-list #changelist-filter ul li,
+.changelist #changelist-filter ul li {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 8px 0 !important;
+}
+
+.change-list #changelist-filter ul li a,
+.changelist #changelist-filter ul li a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.change-list #changelist-filter ul li a:hover,
+.changelist #changelist-filter ul li a:hover {
+    color: #3498db !important;
+}
+
+/* إصلاح الصفحات (Pagination) */
+.change-list .paginator,
+.changelist .paginator {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    margin: 20px 0 !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    text-align: center !important;
+}
+
+.change-list .paginator a,
+.changelist .paginator a {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: white !important;
+    padding: 8px 15px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    margin: 0 5px !important;
+    display: inline-block !important;
+}
+
+.change-list .paginator a:hover,
+.changelist .paginator a:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* إصلاح إضافي للنصوص والعناصر المخفية */
+.change-list .actions,
+.changelist .actions {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    margin: 15px 0 !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.change-list .actions label,
+.changelist .actions label,
+.change-list .actions select,
+.changelist .actions select {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 5px !important;
+    padding: 5px 10px !important;
+}
+
+/* إصلاح النصوص الوصفية */
+.change-list .help,
+.changelist .help,
+.change-list .small,
+.changelist .small,
+.change-list .quiet,
+.changelist .quiet {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: transparent !important;
+}
+
+/* إصلاح صفحة عرض تفاصيل الرسالة */
+.change-form #content-main,
+.change-form .form-row,
+.change-form .fieldBox {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    margin: 10px 0 !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.change-form h1,
+.change-form h2,
+.change-form h3,
+.change-form label,
+.change-form p {
+    color: white !important;
+    background: transparent !important;
+}
+
+/* إصلاح القوائم المنسدلة */
+.change-list select,
+.changelist select,
+.change-form select {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #2c3e50 !important;
+    border: 2px solid rgba(52, 152, 219, 0.3) !important;
+    border-radius: 5px !important;
+    padding: 5px !important;
+}
+
+.change-list select:focus,
+.changelist select:focus,
+.change-form select:focus {
+    border-color: #3498db !important;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5) !important;
+}
+
+/* إصلاح checkbox و radio buttons */
+.change-list input[type="checkbox"],
+.changelist input[type="checkbox"],
+.change-form input[type="checkbox"],
+.change-list input[type="radio"],
+.changelist input[type="radio"],
+.change-form input[type="radio"] {
+    accent-color: #3498db !important;
+    transform: scale(1.2) !important;
+    margin: 0 8px !important;
+}
+
+/* إصلاح عناوين الأعمدة */
+.change-list .results table thead th,
+.changelist .results table thead th {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%) !important;
+    color: white !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* إصلاح رسائل التأكيد والتنبيه */
+.change-list .success,
+.changelist .success,
+.change-form .success {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    border: none !important;
+}
+
+.change-list .warning,
+.changelist .warning,
+.change-form .warning {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    border: none !important;
+}
+
+.change-list .error,
+.changelist .error,
+.change-form .error {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    border: none !important;
+}
