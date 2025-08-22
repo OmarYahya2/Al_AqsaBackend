@@ -28,7 +28,7 @@ git push origin main
 pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python create_superuser.py
 
 # 4. Start Command:
-gunicorn Backend.wsgi:application
+gunicorn wsgi:application
 ```
 
 ### 🔑 متغيرات البيئة المطلوبة:

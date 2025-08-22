@@ -17,7 +17,7 @@ gunicorn Backend --bind 0.0.0.0:8000
 
 **✅ الأمر الصحيح:**
 ```bash
-gunicorn Backend.wsgi:application
+gunicorn wsgi:application
 ```
 
 ### **إعدادات Render الصحيحة:**
@@ -29,7 +29,7 @@ pip install -r requirements.txt && python manage.py collectstatic --noinput && p
 
 #### **Start Command:**
 ```bash
-gunicorn Backend.wsgi:application
+gunicorn wsgi:application
 ```
 
 ### **إعدادات Environment Variables:**
@@ -49,7 +49,7 @@ PYTHONUNBUFFERED=1
 3. اذهب إلى Settings
 4. غيّر **Start Command** إلى:
    ```
-   gunicorn Backend.wsgi:application
+   gunicorn wsgi:application
    ```
 5. احفظ التغييرات
 6. انتظر إعادة النشر التلقائي

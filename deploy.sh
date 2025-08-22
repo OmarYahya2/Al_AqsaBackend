@@ -23,4 +23,4 @@ echo "✅ تم الانتهاء من عملية النشر بنجاح!"
 
 # Start the application with Gunicorn
 echo "🌐 بدء تشغيل الخادم..."
-exec gunicorn Backend.wsgi:application
+exec gunicorn wsgi:application

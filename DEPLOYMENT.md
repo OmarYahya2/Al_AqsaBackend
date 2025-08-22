@@ -93,7 +93,7 @@ git push origin main
 - **Name**: `al-aqsa-backend` (أو أي اسم تختاره)
 - **Runtime**: `Python 3`
 - **Build Command**: `pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python create_superuser.py`
-- **Start Command**: `gunicorn Backend.wsgi:application`
+- **Start Command**: `gunicorn wsgi:application`
 
 **⚠️ مهم:** تأكد من أن Build Command يتضمن `python create_superuser.py` لإنشاء مستخدم admin تلقائياً.
 
