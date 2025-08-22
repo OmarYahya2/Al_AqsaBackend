@@ -101,6 +101,7 @@ git push origin main
 - 📬 **Contact API**: `https://al-aqsabackend-uokt.onrender.com/api/contact/`
 - 🔑 **Username**: `admin` | **Password**: `admin123456`
 - 🎨 **تصميم مذهل بدون أي مشاكل بصرية**
+- ✅ **لا مزيد من خطأ Bad Request (400)**
 
 ---
 

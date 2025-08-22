@@ -28,6 +28,15 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'al-aqsabackend-uokt.onrender.com,localhost,127.0.0.1').split(',')
 
+# إضافة الدومين الذي تولده Render تلقائياً
+render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if render_host:
+    ALLOWED_HOSTS.append(render_host)
+
+# للتطوير - السماح لجميع المضيفين إذا كان DEBUG=True
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -188,3 +197,26 @@ CSRF_TRUSTED_ORIGINS = [
     "https://al-aqsa-medical-lab.vercel.app",
     "https://al-aqsabackend-uokt.onrender.com",
 ]
+
+# إضافة CSRF trusted origins للدومين الذي تولده Render
+if render_host:
+    CSRF_TRUSTED_ORIGINS.append(f"https://{render_host}")
+
+# إعدادات إضافية للإنتاج
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_TZ = True
+
+# إعدادات logging للإنتاج
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
