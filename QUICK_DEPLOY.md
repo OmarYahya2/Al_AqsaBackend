@@ -51,20 +51,27 @@ ALLOWED_HOSTS=your-app.onrender.com,localhost,127.0.0.1
 
 ### 🔗 الروابط النهائية:
 
+- **🏠 الصفحة الرئيسية**: https://al-aqsabackend-uokt.onrender.com/
+  - **إعادة توجيه تلقائي إلى Frontend** ✅
 - **Frontend**: https://al-aqsa-medical-lab.vercel.app
-- **Backend API**: https://your-app.onrender.com/api/contact/
-- **Admin Panel**: https://your-app.onrender.com/admin/
+- **Backend API**: https://al-aqsabackend-uokt.onrender.com/api/contact/
+- **🆕 معلومات API**: https://al-aqsabackend-uokt.onrender.com/api/info/
+- **Admin Panel**: https://al-aqsabackend-uokt.onrender.com/admin/
   - Username: `admin`
   - Password: `admin123456`
 
 ### 🧪 اختبار سريع:
 
 ```bash
-# اختبار Admin Panel
-curl https://your-app.onrender.com/admin/
+# اختبار الصفحة الرئيسية (redirect)
+curl -I https://al-aqsabackend-uokt.onrender.com/
+# Expected: 302 Found → Frontend
+
+# اختبار معلومات API
+curl https://al-aqsabackend-uokt.onrender.com/api/info/
 
 # اختبار Contact API
-curl -X POST https://your-app.onrender.com/api/contact/ \
+curl -X POST https://al-aqsabackend-uokt.onrender.com/api/contact/ \
   -H "Content-Type: application/json" \
   -d '{"first_name":"أحمد","last_name":"محمد","email":"test@example.com","subject":"اختبار","message":"رسالة اختبار"}'
 ```
