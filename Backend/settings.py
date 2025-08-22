@@ -150,11 +150,12 @@ STATICFILES_DIRS = [
 ]
 
 # WhiteNoise settings for serving static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # WhiteNoise configuration
 WHITENOISE_USE_FINDERS = True
 WHITENOISE_AUTOREFRESH = True
+WHITENOISE_SKIP_COMPRESS_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'zip', 'gz', 'tgz', 'bz2', 'tbz', 'xz', 'br']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -220,3 +221,17 @@ LOGGING = {
         'level': 'INFO',
     },
 }
+
+# إعدادات Django Admin
+ADMIN_URL = 'admin/'
+
+# تحسين أداء Admin
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+# إعدادات إضافية للـ Admin في الإنتاج
+if not DEBUG:
+    # تأكد من وجود static files للـ admin
+    STATICFILES_FINDERS = [
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    ]
