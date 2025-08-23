@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-)zff25@-fnl(8*k2d&=4%xemu6!uexm_9_%9r&h1_qq@(n6fud')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'  # تفعيل DEBUG مؤقتاً
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'al-aqsabackend-1-pv0k.onrender.com,al-aqsabackend-uokt.onrender.com,localhost,127.0.0.1').split(',')
 

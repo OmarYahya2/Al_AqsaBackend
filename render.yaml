@@ -3,7 +3,7 @@ services:
     name: al-aqsa-backend-new
     runtime: python3
     rootDir: Al-AqsaBackend
-    buildCommand: "pip install -r requirements.txt && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && python create_superuser.py"
+    buildCommand: "pip install -r requirements.txt && python manage.py makemigrations account && python manage.py migrate && python manage.py collectstatic --noinput"
     startCommand: "gunicorn Backend.wsgi:application"
     plan: free
     branch: main
@@ -12,7 +12,7 @@ services:
       - key: DJANGO_SECRET_KEY
         generateValue: true
       - key: DEBUG
-        value: "False"
+        value: "True"
       - key: ALLOWED_HOSTS
         value: "localhost,127.0.0.1"
       - key: PYTHONUNBUFFERED
