@@ -76,20 +76,20 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# استخدام PostgreSQL في الإنتاج و SQLite في التطوير
-if os.environ.get('DATABASE_URL'):
-    # إعدادات PostgreSQL للإنتاج
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    # إعدادات SQLite للتطوير المحلي
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+# إعدادات PostgreSQL
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME', 'MyDb'),
+        'USER': os.environ.get('DB_USER', 'mydb_5kr4_user'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'SFDQSlNoYjRPpsC9hbHiK4PQBKEI6w3H'),
+        'HOST': os.environ.get('DB_HOST', 'dpg-d2krgrjipnbc73fgg7n0-a.oregon-postgres.render.com'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+        'OPTIONS': {
+            'sslmode': 'require',
         }
     }
+}
 
 
 
