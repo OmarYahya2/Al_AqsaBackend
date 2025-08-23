@@ -3,7 +3,7 @@ services:
     name: al-aqsa-backend-new
     runtime: python3
     rootDir: Al-AqsaBackend
-    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python create_superuser.py"
+    buildCommand: "pip install -r requirements.txt && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && python create_superuser.py"
     startCommand: "gunicorn Backend.wsgi:application"
     plan: free
     branch: main
