@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,20 +76,29 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# إعدادات PostgreSQL
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'MyDb'),
-        'USER': os.environ.get('DB_USER', 'mydb_5kr4_user'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'SFDQSlNoYjRPpsC9hbHiK4PQBKEI6w3H'),
-        'HOST': os.environ.get('DB_HOST', 'dpg-d2krgrjipnbc73fgg7n0-a.oregon-postgres.render.com'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-        'OPTIONS': {
-            'sslmode': 'require',
+# إعدادات قاعدة البيانات
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+if DATABASE_URL:
+    # استخدام DATABASE_URL إذا كان متوفراً
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL)
+    }
+else:
+    # إعدادات PostgreSQL يدوية
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DB_NAME', 'mydb_5kr4'),
+            'USER': os.environ.get('DB_USER', 'mydb_5kr4_user'),
+            'PASSWORD': os.environ.get('DB_PASSWORD', 'SFDQSlNoYjRPpsC9hbHiK4PQBKEI6w3H'),
+            'HOST': os.environ.get('DB_HOST', 'dpg-d2krgrjipnbc73fgg7n0-a.oregon-postgres.render.com'),
+            'PORT': os.environ.get('DB_PORT', '5432'),
+            'OPTIONS': {
+                'sslmode': 'require',
+            }
         }
     }
-}
 
 
 
