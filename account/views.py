@@ -6,11 +6,14 @@ from rest_framework.permissions import AllowAny
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from .serializers import ContactMessageSerializer
 import logging
 
 logger = logging.getLogger(__name__)
 
+@method_decorator(csrf_exempt, name='dispatch')
 class ContactMessageView(APIView):
     permission_classes = [AllowAny]  # السماح لجميع المستخدمين بإرسال رسائل
     
@@ -48,12 +51,16 @@ class ContactMessageView(APIView):
                 )
                 
         except Exception as e:
+            import traceback
+            error_details = traceback.format_exc()
             logger.error(f"Error processing contact form: {str(e)}")
+            logger.error(f"Full traceback: {error_details}")
             return Response(
                 {
                     "success": False,
                     "message": "خطأ في الخادم. يرجى المحاولة مرة أخرى لاحقاً",
-                    "error": str(e)
+                    "error": str(e),
+                    "details": error_details if status.HTTP_500_INTERNAL_SERVER_ERROR else None
                 },
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
